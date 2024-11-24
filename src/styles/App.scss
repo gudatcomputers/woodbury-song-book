@@ -1,0 +1,172 @@
+@use "colors.scss" as colors;
+
+$margin-size: 8px;
+$border-radius: 8px;
+
+.woodbury-card {
+  background-color: #eeeeee;
+  border: 2px solid #aaaaaa;
+  border-radius: $border-radius;
+}
+
+html {
+  overflow: hidden;
+}
+
+.app-header {
+  @extend .woodbury-card;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 16px;
+  height: 12svh;
+}
+
+.spacer {
+  height: 2svh;
+}
+
+.media-content {
+  display: flex;
+  justify-content: center;
+}
+
+.song-link-container {
+  @extend .woodbury-card;
+  display: "flex";
+  flex-direction: column;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.song-platform-select-container {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  margin-bottom: 8px;
+}
+
+.song-link {
+  background-color: white;
+  color: black;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 2px solid #aaaaaa;
+}
+
+.song-link-selected {
+  background-color: #333333;
+  color: white;
+}
+
+.song-link-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.song-content {
+  overflow-y: auto;
+  height: 79svh;
+  border-radius: $border-radius;
+}
+
+.song-structure-container {
+  @extend .woodbury-card;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.logo {
+  height: 100%;
+  padding: 8px;
+  border-radius: 30%;
+}
+
+.song-selector {
+  height: 50%;
+  width: 100%;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 4px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23131313%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem top 50%;
+  background-size: 0.65rem auto;
+}
+.song-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: $margin-size;
+}
+
+$gap-size: 16px;
+
+.section-group {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  gap: $gap-size;
+}
+
+$border-width: 4px;
+$border-radius: 4px;
+$gap-offset: 6 * $gap-size;
+$margin-offset: 2 * $margin-size;
+$width-subtrahend: calc($gap-offset + $margin-offset);
+
+.measure {
+  width: calc(calc(100% - $width-subtrahend) / 8);
+  padding-bottom: calc(
+    calc(calc(100% - $width-subtrahend) / 8) - calc($border-width * 2)
+  );
+  height: 0;
+  border: $border-width solid;
+  border-color: transparent;
+  border-radius: $border-radius;
+  text-align: center;
+}
+
+.other {
+  border-color: colors.$tiffany-blue;
+}
+
+.intro {
+  border-color: colors.$robin-egg-blue;
+}
+
+.chorus {
+  border-color: colors.$yin-min-blue;
+}
+
+.post-chorus {
+  border-color: colors.$flame;
+}
+
+.verse {
+  border-color: colors.$persian-red;
+}
+
+.pre-chorus {
+  border-color: colors.$emerald;
+}
+
+.pre-verse {
+  border-color: colors.$pre-verse;
+}
+
+.bridge {
+  border-color: colors.$dark-grey;
+}
+
+.outro {
+  border-color: #c80000;
+}
+
+.solo {
+  border-color: #800080;
+}
